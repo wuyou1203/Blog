@@ -203,11 +203,86 @@ body {
         }
 
 
-        .center-container {
-    display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center;      /* 垂直居中（可选） */
-    width: 100%;              /* 占满整行 */
-    padding: 20px 0;          /* 上下留点空隙 */
+
+        /* 时间轴容器 */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* 时间轴线 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #666;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* 时间轴项 */
+.timeline-item {
+    padding: 50px 40px;
+    position: relative;
+    width: 50%;
     box-sizing: border-box;
+}
+
+.left { left: 0; }
+.right { left: 50%; }
+
+/* 内容框 */
+.timeline-content {
+    background: #2a2a2a;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 20px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* 圆形标记 */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border: 2px solid #666;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left::before {
+    left: -7px;
+}
+
+.right::before {
+    right: -7px;
+}
+
+/* 文字链接样式 */
+.timeline-content a {
+    text-decoration: none;
+    color: #ffd700;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.timeline-content a:hover {
+    color: #ff00ff;
+    transform: translateX(4px);
+}
+
+/* 悬停时的内容框变化 */
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
 }

@@ -201,13 +201,3 @@ body {
         #userInfoContent a:hover {
             text-decoration: underline;
         }
-
-
-        .center-container {
-    display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center;      /* 垂直居中（可选） */
-    width: 100%;              /* 占满整行 */
-    padding: 20px 0;          /* 上下留点空隙 */
-    box-sizing: border-box;
-}

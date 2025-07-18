@@ -3,16 +3,13 @@
 
 <head>
     <link rel="icon" href="../photo/logo.png" />
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>优酱的小屋</title>
-
-    <!-- 复用 talks.css 样式 -->
-    <link rel="stylesheet" href="./about.css" />
+    <title>PHOTOALBUMS - 优酱的小屋</title>
+    <link rel="stylesheet" href="./photoalbums.css" />
 </head>
 
-<body> <!-- 默认使用暗黑渐变背景 -->
+<body>
 
     <!-- 导航栏 -->
     <header class="navbar">
@@ -35,39 +32,43 @@
 
     <!-- 页面主体 -->
     <main class="container">
-        <h2 style="margin-bottom: 30px;">关于我</h2>
+        <h1>我的相册</h1>
 
-        
-<!-- 居中播放器 -->
-<div class="center-container">
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0"
-        width="80%" height="110"
-        src="https://music.163.com/outchain/player?type=2&id=2617703637&auto=0&loop=true&height=66">
-    </iframe>
-</div>
+        <section class="grid-albums">
+            <!-- 每一个相册格子 -->
+            <div class="grid-item">
+                <img src="../photo/logo.png" alt="相册1">
+                <p>旅行日记</p>
+            </div>
 
-        <!-- 关于内容 -->
-        <section style="max-width: 800px; margin: 0 auto; font-size: 15px; line-height: 1.8;">
-            <p>你好，我是优酱，一名热爱技术与创造的开发者。</p>
-            <p>我专注于 Web 开发、开源项目和工具链优化，同时也喜欢写博客分享学习心得与项目经验。</p>
-            <p>在日常生活中，我热爱音乐、摄影和旅行，这些爱好让我保持灵感和创造力。</p>
+            <div class="grid-item">
+                <img src="images/album2.jpg" alt="相册2">
+                <p>美食探索</p>
+            </div>
 
-            <h3 style="margin-top: 30px;">技术栈</h3>
-            <ul>
-                <li>前端：HTML / CSS / JavaScript / React / Vue</li>
-                <li>后端：Node.js / Python / Java</li>
-                <li>工具：Git / Docker / VSCode / Linux</li>
-            </ul>
+            <div class="grid-item">
+                <img src="images/album3.jpg" alt="相册3">
+                <p>城市夜景</p>
+            </div>
 
-            <h3 style="margin-top: 30px;">联系方式</h3>
-            <p>
-                📮 Email: <a href="mailto:765029758@qq.com">765029758@qq.com</a><br />
-                🐱 GitHub: <a href="https://github.com/wuyou1203" target="_blank">wuyou1203</a>
-            </p>
+            <div class="grid-item">
+                <img src="images/album4.jpg" alt="相册4">
+                <p>校园生活</p>
+            </div>
+
+            <div class="grid-item">
+                <img src="images/album5.jpg" alt="相册5">
+                <p>宠物日常</p>
+            </div>
+
+            <div class="grid-item">
+                <img src="images/album6.jpg" alt="相册6">
+                <p>自然风光</p>
+            </div>
         </section>
     </main>
 
-    <!-- 弹窗脚本 -->
+    <!-- 弹窗脚本（与 talks.html 相同） -->
     <script>
         // 切换主题按钮
         const toggleButton = document.getElementById('themeToggle');
@@ -83,15 +84,15 @@
             var userInfoModal = document.createElement('div');
             userInfoModal.id = "userInfoModal";
             userInfoModal.innerHTML = `
-                <div id="userInfoContent">
-                    <span class="close">&times;</span>
-                    <h2>优酱的小屋</h2>
-                    <p>
-                        📮 Email: <a href="mailto:765029758@qq.com">765029758@qq.com</a><br />
-                        🐱 GitHub: <a href="https://github.com/wuyou1203" target="_blank">wuyou1203</a>
-                    </p>
-                </div>
-            `;
+            <div id="userInfoContent">
+                <span class="close">&times;</span>
+                <h2>优酱的小屋</h2>
+                <p>
+                    📮 Email: <a href="mailto:765029758@qq.com">765029758@qq.com</a><br />
+                    🐱 GitHub: <a href="https://github.com/wuyou1203" target="_blank">wuyou1203</a>
+                </p>
+            </div>
+        `;
             document.body.appendChild(userInfoModal);
 
             var span = userInfoModal.querySelector('.close');
