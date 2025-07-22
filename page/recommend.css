@@ -1,0 +1,215 @@
+/* =============== Reset =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =============== Dark Mode =============== */
+.dark-mode {
+  background: linear-gradient(to right, #00bfff, #ff00ff);
+  color: #f1f1f1;
+}
+
+/* =============== Layout =============== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* =============== Navbar =============== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #00bfff, #ff00ff);
+  padding: 8px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.logo span {
+  font-size: 12px;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.actions button:hover {
+  color: #ffd700;
+}
+
+/* =============== Recommend Page Styles =============== */
+.recommendations {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.recommend-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.recommend-card:hover {
+  transform: translateY(-5px);
+}
+
+.recommend-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.recommend-card__body {
+  padding: 1rem;
+}
+
+.recommend-card__title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.recommend-card__category {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.recommend-card__description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.recommend-card__footer {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* =============== Modal =============== */
+#userInfoModal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#userInfoContent {
+  background-color: #fff;
+  margin: 8% auto;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: #333;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #999;
+}
+
+.close:hover {
+  color: #000;
+}
+
+#userInfoContent h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #000;
+}
+
+#userInfoContent p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#userInfoContent a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+#userInfoContent a:hover {
+  text-decoration: underline;
+}
+
+/* =============== Responsive =============== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+}
