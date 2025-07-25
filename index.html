@@ -31,7 +31,7 @@
 
     <main class="container">
         <section class="featured-post">
-            <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (1).png" alt="Featured Post Image" />
+            <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (1).png" alt="Featured Post Image"   onerror="this.onerror=null; this.src='./photo/home%20(1).png'" />
             <div class="post-content">
                 <h2>优酱的小屋</h2>
                 <p>这是一个属于程序员 Lucky 的技术小天地，记录成长、整理知识、沉淀经验。这里有：</p>
@@ -40,7 +40,7 @@
                 <p>📸 私人相册区：记录生活的另一面</p>
                 <p>希望我的分享对你有所启发，也欢迎留言交流，一起进步！</p>
                 <div class="post-meta">
-                    <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home.png" alt="User Avatar" />
+                    <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home.png" alt="User Avatar"   onerror="this.onerror=null; this.src='./photo/home.png'" />
                     <span>Lucky shared on Jul 28, 2022</span>
                 </div>
             </div>
@@ -48,21 +48,21 @@
 
         <section class="editor-selection">
             <div class="card">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (2).png" alt="Card Image" />
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (2).png" alt="Card Image"   onerror="this.onerror=null; this.src='./photo/home%20(2).png'" />
                 <div class="card-content">
                     <h3>MySQL 覆盖索引</h3>
                     <p>1.什么是索引索引（在 MySQL 中也叫“键key”）是存储引擎快速找到记录的一种数据结构，通俗来说类似书本的目录，这个比方虽然被用的最多但是...</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (3).png" alt="Card Image" />
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (3).png" alt="Card Image" onerror="this.onerror=null; this.src='./photo/home%20(3).png'"/>
                 <div class="card-content">
                     <h3>RabbitMQ教程</h3>
                     <p>RabbitMQ 实战教程 1.MQ引言 1.1 什么是MQ MQ(Message Queene) : 翻译为消息队列,通过典型的 生产者和消费者模型,生产者不断向消息队列中生...</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (4).png" alt="Card Image" />
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (4).png" alt="Card Image" onerror="this.onerror=null; this.src='./photo/home%20(4).png'"/>
                 <div class="card-content">
                     <h3>Vue3 响应式原理详解</h3>
                     <p>Vue3 使用了 Proxy 和 Reflect 来实现响应式系统，相比 Vue2 的 Object.defineProperty，Proxy
@@ -70,14 +70,14 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (5).png" alt="Card Image" />
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (5).png" alt="Card Image" onerror="this.onerror=null; this.src='./photo/home%20(5).png'"/>
                 <div class="card-content">
                     <h3>HTTP 状态码详解</h3>
                     <p>HTTP 状态码是服务器返回给客户端的三位数字代码，用于表示请求的状态。常见的如 200 表示成功，404 表示资源未找到，500 表示服务器内部错误等，掌握状态码有助于快速定位问题。</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (6).png" alt="Card Image" />
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (6).png" alt="Card Image" onerror="this.onerror=null; this.src='./photo/home%20(6).png'"/>
                 <div class="card-content">
                     <h3>Git 常用命令合集</h3>
                     <p>Git 是目前最流行的版本控制系统之一，掌握常用命令如 git clone、git commit、git push、git branch 等可以极大提升团队协作效率，是每个开发者必备技能。
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (7).png" alt="Card Image" />
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/home (7).png" alt="Card Image" onerror="this.onerror=null; this.src='./photo/home%20(7).png'"/>
                 <div class="card-content">
                     <h3>React Hooks 入门教程</h3>
                     <p>React Hooks 是 React 16.8 引入的新特性，它让函数组件也能使用状态和其他 React 特性，常用如 useState、useEffect、useContext
@@ -95,46 +95,7 @@
         </section>
     </main>
 
-    <script>
-        const toggleButton = document.getElementById('themeToggle');
-        toggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var userInfoBtn = document.getElementById('me');
-            var userInfoModal = document.createElement('div'); // 动态创建modal
-            userInfoModal.id = "userInfoModal";
-
-            userInfoModal.innerHTML = `
-        <div id="userInfoContent">
-            <span class="close">&times;</span>
-            <h2>优酱的小屋</h2>
-        <p class="text-lg text-slate-700 dark:text-gray-300 space-y-2">
-          📮 Email: <a href="mailto:765029758@qq.com"
-            class="text-cyan-600 dark:text-cyan-400 underline">765029758@qq.com</a><br />
-          🐱 GitHub: <a href="https://github.com/wuyou1203" class="text-cyan-600 dark:text-cyan-400 underline"
-            target="_blank">wuyou1203</a>
-        </p>
-        </div>`;
-            document.body.appendChild(userInfoModal);
-
-            var span = userInfoModal.querySelector('.close');
-
-            userInfoBtn.onclick = function () {
-                userInfoModal.style.display = "block";
-            }
-
-            span.onclick = function () {
-                userInfoModal.style.display = "none";
-            }
-
-            window.onclick = function (event) {
-                if (event.target == userInfoModal) {
-                    userInfoModal.style.display = "none";
-                }
-            }
-        });
+    <script src="./main.js">
     </script>
 </body>
 
