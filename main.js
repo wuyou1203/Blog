@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // 注册 Service Worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
+  navigator.serviceWorker.register('./sw.js')
     .then(reg => console.log('✅ Service Worker 注册成功：', reg))
     .catch(err => console.error('❌ 注册失败：', err));
 }
