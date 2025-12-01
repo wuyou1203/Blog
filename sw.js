@@ -7,6 +7,16 @@ self.addEventListener('install', event => {
         './index.html',
         './main.js',
         './styles.css',
+        './page/talks.html',
+        './page/about.html',
+        './page/archives.html',
+        './page/photoalbums.html',
+        './page/recommend.html',
+        './page/talks.css',
+        './page/about.css',
+        './page/archives.css',
+        './page/photoalbums.css',
+        './page/recommend.css',
         './photo/home.png',
         './photo/home%20(1).png',
         './photo/home%20(2).png',
@@ -14,7 +24,17 @@ self.addEventListener('install', event => {
         './photo/home%20(4).png',
         './photo/home%20(5).png',
         './photo/home%20(6).png',
-        './photo/home%20(7).png'
+        './photo/home%20(7).png',
+        './photo/head.png',
+        './photo/ph%20(1).jpg',
+        './photo/ph%20(3).jpg',
+        './photo/ph%20(4).jpg',
+        './photo/pho%20(1).jpg',
+        './photo/pho%20(2).jpg',
+        './photo/pho%20(3).jpg',
+        './photo/pho%20(4).jpg',
+        './photo/pho%20(5).jpg',
+        './photo/pho%20(6).jpg'
 
       ]);
     })

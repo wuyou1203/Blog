@@ -7,16 +7,16 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1e1e1e; /* 默认为黑色 */
-    color: #ffffff;
+    background-color: #0f172a;
+    color: #e5e7eb;
     line-height: 1.6;
     transition: background-color 0.3s ease;
-    padding-top: 70px; /* 确保内容不被固定头部遮挡 */
+    padding-top: 70px;
 }
 
 .dark-mode {
-    background: linear-gradient(to right, #00bfff, #ff00ff); /* 切换到渐变色 */
-    color: #f1f1f1;
+    background: linear-gradient(135deg, #0b1324 0%, #1b2845 100%);
+    color: #f3f4f6;
 }
 
 /* 其余样式保持不变... */
@@ -29,7 +29,7 @@ body {
         }
 
         /* ========== Navbar ========== */
-        .navbar {
+.navbar {
             position: fixed;
             top: 0;
             left: 0;
@@ -39,9 +39,10 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(to right, #00bfff, #ff00ff);
-            padding: 8px 20px; /* 更小的内边距 */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: saturate(180%) blur(10px);
+            padding: 10px 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
             transition: background-color 0.3s ease;
         }
 
@@ -63,10 +64,12 @@ body {
 
         nav ul li a {
             text-decoration: none;
-            color: white;
+            color: #e5e7eb;
             font-weight: 500;
-            font-size: 12px; /* 更小的字体大小 */
-            transition: color 0.3s ease;
+            font-size: 13px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease, color 0.2s ease;
         }
 
         .actions button {
@@ -79,7 +82,7 @@ body {
         }
 
         .actions button:hover {
-            color: #ffd700;
+            color: #93c5fd;
         }
 
         /* ========== Talks Timeline ========== */
@@ -93,7 +96,7 @@ body {
             display: flex;
             align-items: start;
             gap: 15px;
-            background-color: #2a2a2a;
+            background-color: #111827;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -116,7 +119,7 @@ body {
             flex: 1;
             font-size: 15px;
             line-height: 1.6;
-            color: #f1f1f1;
+            color: #e5e7eb;
         }
 
         .talk-content small {

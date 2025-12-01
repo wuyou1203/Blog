@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHOTOALBUMS - 优酱的小屋</title>
+    <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="./photoalbums.css" />
 </head>
 
@@ -37,90 +38,47 @@
         <section class="grid-albums">
             <!-- 每一个相册格子 -->
             <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (1).jpg" alt="相册1">
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (1).jpg" alt="相册1" onerror="this.onerror=null; this.src='../photo/pho%20(1).jpg'">
             </div>
 
             <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (2).jpg" alt="相册2">
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (2).jpg" alt="相册2" onerror="this.onerror=null; this.src='../photo/pho%20(2).jpg'">
             </div>
 
             <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (3).jpg" alt="相册3">
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (3).jpg" alt="相册3" onerror="this.onerror=null; this.src='../photo/pho%20(3).jpg'">
             </div>
 
             <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (4).jpg" alt="相册4">
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (4).jpg" alt="相册4" onerror="this.onerror=null; this.src='../photo/pho%20(4).jpg'">
             </div>
 
             <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (5).jpg" alt="相册5">
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (5).jpg" alt="相册5" onerror="this.onerror=null; this.src='../photo/pho%20(5).jpg'">
             </div>
 
             <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (6).jpg" alt="相册6">
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/pho (6).jpg" alt="相册6" onerror="this.onerror=null; this.src='../photo/pho%20(6).jpg'">
             </div>
             <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/ph (1).jpg" alt="相册7">
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/ph (1).jpg" alt="相册7" onerror="this.onerror=null; this.src='../photo/ph%20(1).jpg'">
             </div>
 
 
 
             <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/ph (3).jpg" alt="相册9">
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/ph (3).jpg" alt="相册9" onerror="this.onerror=null; this.src='../photo/ph%20(3).jpg'">
             </div>
 
             <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/ph (4).jpg" alt="相册10">
+                <img src="https://raw.githubusercontent.com/wuyou1203/Blog/main/photo/ph (4).jpg" alt="相册10" onerror="this.onerror=null; this.src='../photo/ph%20(4).jpg'">
             </div>
 
 
         </section>
     </main>
 
-    <!-- 弹窗脚本（与 talks.html 相同） -->
-    <script>
-        // 切换主题按钮
-        const toggleButton = document.getElementById('themeToggle');
-        if (toggleButton) {
-            toggleButton.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-            });
-        }
-
-        // 弹窗逻辑
-        document.addEventListener('DOMContentLoaded', function () {
-            var userInfoBtn = document.getElementById('me');
-            var userInfoModal = document.createElement('div');
-            userInfoModal.id = "userInfoModal";
-            userInfoModal.innerHTML = `
-            <div id="userInfoContent">
-                <span class="close">&times;</span>
-                <h2>优酱的小屋</h2>
-                <p>
-                    📮 Email: <a href="mailto:765029758@qq.com">765029758@qq.com</a><br />
-                    🐱 GitHub: <a href="https://github.com/wuyou1203" target="_blank">wuyou1203</a>
-                </p>
-            </div>
-        `;
-            document.body.appendChild(userInfoModal);
-
-            var span = userInfoModal.querySelector('.close');
-
-            userInfoBtn.onclick = function () {
-                userInfoModal.style.display = "block";
-            };
-
-            span.onclick = function () {
-                userInfoModal.style.display = "none";
-            };
-
-            window.onclick = function (event) {
-                if (event.target == userInfoModal) {
-                    userInfoModal.style.display = "none";
-                }
-            };
-        });
-    </script>
+    <script src="../main.js"></script>
 </body>
 
 </html>
