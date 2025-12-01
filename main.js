@@ -1,6 +1,12 @@
 // 主题切换
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark-mode');
+}
+
 document.getElementById('themeToggle').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
 // 显示用户信息弹窗

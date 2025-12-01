@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: #0f172a;
+    color: #e5e7eb;
     line-height: 1.6;
     transition: background-color 0.3s ease;
     padding-top: 70px;
@@ -16,9 +16,8 @@ body {
 }
 
 .dark-mode {
-    background: linear-gradient(to right, #00bfff, #ff00ff);
-    /* 和标题一致的渐变 */
-    color: #f1f1f1;
+    background: linear-gradient(135deg, #0b1324 0%, #1b2845 100%);
+    color: #f3f4f6;
 }
 
 .container {
@@ -38,17 +37,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #00bfff, #ff00ff);
-    padding: 8px 20px;
-    /* 更小的内边距 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: saturate(180%) blur(10px);
+    padding: 10px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     transition: background-color 0.3s ease;
 }
 
 .logo {
-    font-size: 16px;
-    /* 更小的字体大小 */
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .logo span {
@@ -60,48 +59,46 @@ body {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 12px;
-    /* 减少元素间的间距 */
+    gap: 14px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #e5e7eb;
     font-weight: 500;
-    font-size: 12px;
-    /* 更小的字体大小 */
-    transition: color 0.3s ease;
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .actions button {
     background: none;
     border: none;
-    color: white;
+    color: #e5e7eb;
     cursor: pointer;
-    font-size: 12px;
-    /* 更小的字体大小 */
-    margin-left: 8px;
-    /* 减少按钮间的间距 */
+    font-size: 13px;
+    margin-left: 10px;
 }
 
 .actions button:hover {
-    color: #ffd700;
+    color: #93c5fd;
 }
 
 /* Featured Post */
 .featured-post {
     display: flex;
     flex-wrap: wrap;
-    background: #2a2a2a;
+    background: #111827;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     margin-bottom: 30px;
 }
 
 .featured-post img {
     width: 100%;
-    max-width: 50%;
+    max-width: 48%;
     height: auto;
     object-fit: cover;
     border-top-left-radius: 12px;
@@ -109,12 +106,14 @@ nav ul li a {
 }
 
 .post-content {
-    padding: 20px;
+    padding: 24px;
     flex: 1;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.55);
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
 }
+.post-content h2 { font-size: 28px; margin-bottom: 10px; }
+.post-content p { font-size: 15px; color: #d1d5db; }
 
 .post-meta {
     display: flex;
@@ -128,29 +127,32 @@ nav ul li a {
     border-radius: 50%;
     margin-right: 10px;
 }
+.post-meta span { color: #9ca3af; font-size: 12px; }
 
 /* Cards */
 .editor-selection {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .card {
-    background: #2a2a2a;
+    background: #111827;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     width: 100%;
     max-width: 100%;
     /* 与上面文章区域等宽 */
-    transition: transform 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
 .card img {
@@ -161,7 +163,7 @@ nav ul li a {
 
 .card-content {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .card h3 {
@@ -196,9 +198,7 @@ nav ul li a {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
-    /* 背景半透明 */
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     /* 黑色背景带有透明度 */
 }
 
@@ -224,7 +224,13 @@ nav ul li a {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #111827;
     text-decoration: none;
     cursor: pointer;
 }
+
+.dark-mode .featured-post { background: rgba(17, 24, 39, 0.85); }
+.dark-mode .post-content { background: rgba(0, 0, 0, 0.4); }
+.dark-mode .card { background: rgba(17, 24, 39, 0.85); }
+.dark-mode .card-content { background: rgba(0, 0, 0, 0.35); }
+.dark-mode .navbar { background: rgba(17, 24, 39, 0.7); }
