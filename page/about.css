@@ -6,211 +6,266 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f172a;
-    color: #e5e7eb;
-    line-height: 1.6;
-    transition: background-color 0.3s ease;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0c0a1d 0%, #1a1235 50%, #251b4a 100%);
+    color: #e0e0ff;
+    line-height: 1.7;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding-top: 70px;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(91, 44, 196, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(120, 75, 210, 0.15) 0%, transparent 25%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 .dark-mode {
-    background: linear-gradient(135deg, #0b1324 0%, #1b2845 100%);
-    color: #f3f4f6;
+    background: linear-gradient(135deg, #08061a 0%, #160f2e 50%, #201742 100%);
+    color: #d8d8ff;
 }
 
-/* 其余样式保持不变... */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            
-        }
-
-        /* ========== Navbar ========== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(17, 24, 39, 0.6);
-            backdrop-filter: saturate(180%) blur(10px);
-            padding: 10px 24px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-            transition: background-color 0.3s ease;
-        }
-
-        .logo {
-            font-size: 16px; /* 更小的字体大小 */
-            font-weight: bold;
-        }
-
-        .logo span {
-            font-size: 12px; /* 更小的字体大小 */
-            display: block;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 12px; /* 减少元素间的间距 */
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #e5e7eb;
-            font-weight: 500;
-            font-size: 13px;
-            padding: 6px 10px;
-            border-radius: 8px;
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-
-        .actions button {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 12px; /* 更小的字体大小 */
-            margin-left: 8px; /* 减少按钮间的间距 */
-        }
-
-        .actions button:hover {
-            color: #93c5fd;
-        }
-
-        /* ========== Talks Timeline ========== */
-        .talks-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .talk-item {
-            display: flex;
-            align-items: start;
-            gap: 15px;
-            background-color: #2a2a2a;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .talk-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .talk-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .talk-content {
-            flex: 1;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #f1f1f1;
-        }
-
-        .talk-content small {
-            display: block;
-            color: #aaa;
-            margin-top: 8px;
-            font-size: 12px;
-        }
-
-        @media (max-width: 768px) {
-            .talk-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .talk-avatar {
-                width: 40px;
-                height: 40px;
-            }
-        }
-
-        /* ========== Modal ========== */
-        /* 弹窗背景遮罩 */
-        #userInfoModal {
-            display: none; /* 默认隐藏 */
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.7); /* 半透明遮罩 */
-        }
-
-        /* 弹窗内容 */
-        #userInfoContent {
-            background-color: #fff;
-            margin: 8% auto;
-            padding: 25px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            position: relative;
-            color: #333;
-        }
-
-        /* 关闭按钮 × */
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #999;
-        }
-
-        .close:hover {
-            color: #000;
-        }
-
-        /* 弹窗内容样式 */
-        #userInfoContent h2 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 20px;
-            color: #000;
-        }
-
-        #userInfoContent p {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        #userInfoContent a {
-            color: #0077cc;
-            text-decoration: none;
-        }
-
-        #userInfoContent a:hover {
-            text-decoration: underline;
-        }
-
-
-        .center-container {
+/* ========== Navbar ========== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center;      /* 垂直居中（可选） */
-    width: 100%;              /* 占满整行 */
-    padding: 20px 0;          /* 上下留点空隙 */
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(12, 10, 29, 0.85);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    padding: 12px 24px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(120, 75, 210, 0.2);
+    transition: all 0.3s ease;
+}
+
+.navbar:hover {
+    background: rgba(12, 10, 29, 0.95);
+    box-shadow: 
+        0 6px 25px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #8a6de9, #b89cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 10px rgba(138, 109, 233, 0.3);
+}
+
+.logo span {
+    font-size: 12px;
+    display: block;
+    letter-spacing: 0.8px;
+    opacity: 0.8;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #c5c5ff;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(138, 109, 233, 0.2), transparent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 109, 233, 0.3);
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.actions button {
+    background: rgba(138, 109, 233, 0.15);
+    border: 1px solid rgba(138, 109, 233, 0.3);
+    color: #c5c5ff;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(4px);
+}
+
+.actions button:hover {
+    background: rgba(138, 109, 233, 0.25);
+    color: #ffffff;
+    border-color: rgba(138, 109, 233, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(138, 109, 233, 0.3);
+}
+
+/* ========== Content Styles ========== */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 24px;
+    background: linear-gradient(45deg, #ffffff, #c5c5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    font-weight: 700;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #d0d0ff;
+    text-align: justify;
+}
+
+.about-content .highlight {
+    color: #8a6de9;
+    font-weight: 500;
+}
+
+/* ========== Modal ========== */
+#userInfoModal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(12, 10, 29, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+#userInfoContent {
+    background: rgba(26, 18, 53, 0.9);
+    margin: 8% auto;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 0 1px rgba(138, 109, 233, 0.2);
+    position: relative;
+    color: #e0e0ff;
+    border: 1px solid rgba(138, 109, 233, 0.2);
+    backdrop-filter: blur(12px);
+}
+
+.close {
+    color: #a0a0d0;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+    transform: rotate(90deg);
+    text-shadow: 0 0 10px rgba(138, 109, 233, 0.5);
+}
+
+#userInfoContent h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    background: linear-gradient(45deg, #8a6de9, #b89cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+#userInfoContent p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #c5c5ff;
+}
+
+#userInfoContent a {
+    color: #8a6de9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#userInfoContent a:hover {
+    color: #b89cff;
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(138, 109, 233, 0.3);
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
     box-sizing: border-box;
 }
